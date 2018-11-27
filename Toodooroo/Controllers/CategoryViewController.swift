@@ -23,6 +23,10 @@ class CategoryViewController: UITableViewController {
     
     //MARK: - TableView Datasource Methods
     
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection: Int) -> Int {
+        return categoryArray?.count ?? 1
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)        
         
@@ -30,10 +34,6 @@ class CategoryViewController: UITableViewController {
         
         return cell
         
-    }
-    
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection: Int) -> Int {
-        return categoryArray?.count ?? 1
     }
     
     //MARK: - TableView Delegate Methods
